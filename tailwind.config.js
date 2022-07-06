@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**/*.html"],
+  content: ["./*.html", "./src/*.css"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "banchan-green": "#96e9d3",
+        "banchan-green-accent": "#359655"
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('daisyui')
+  ],
 }

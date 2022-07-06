@@ -9,6 +9,10 @@ import imagemin from "gulp-imagemin";
 const browserSync = BrowserSync.create();
 
 // Task for compiling our CSS files using PostCSS
+gulp.task("css", () => {
+
+});
+
 function cssTask() {
     return src("./src/*.css") // read .css files from ./src/ folder
         .pipe(postcss()) // compile using postcss
@@ -41,7 +45,7 @@ function browsersyncReload(cb) {
 // Watch Files & Reload browser after tasks
 function watchTask() {
     watch("./**/*.html", browsersyncReload);
-    watch(["./src/*.css"], series(cssTask, browsersyncReload));
+    watch(["./**/*.html", "./src/*.css"], series(cssTask, browsersyncReload));
 }
 
 // Default Gulp Task
