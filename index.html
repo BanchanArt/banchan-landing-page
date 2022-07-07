@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="forest">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -40,11 +40,43 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script>
+      function updateThemedElements(newTheme) {
+        const oldTheme = newTheme === "dark" ? "light" : "dark";
+        [...document.querySelectorAll(".themed")].forEach((el) => {
+          if (el.classList.contains(oldTheme)) {
+            el.classList.add("hidden");
+          } else {
+            el.classList.remove("hidden");
+          }
+        });
+      }
+      // Stuff for dark/light mode toggling.
+      document.addEventListener("DOMContentLoaded", () => {
+        let theme = localStorage.getItem("theme");
+        if (!theme) {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+        updateThemedElements(theme);
+
+        const toggle = document.querySelector("#mode-toggle");
+        toggle.checked = theme === "dark";
+
+        toggle.addEventListener("change", (ev) => {
+          const newTheme = ev.target.checked ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", newTheme);
+          updateThemedElements(newTheme);
+        });
+      });
+    </script>
   </head>
-  <body class="flex flex-col bg-base-100">
+  <body class="flex flex-col bg-base-100 relative">
     <div
       id="header"
-      class="navbar"
+      class="navbar bg-base-100 opacity-100 top-0 left-0 w-full sticky z-10"
     >
       <div class="flex-1 flex flex-row place-items-center gap-2">
         <img src="/assets/images/favicon-32x32.png" class="rounded-full w-8" />
@@ -52,35 +84,71 @@
       </div>
       <div class="flex-none">
         <ul class="menu menu-horizontal p-0">
-          <li><a href="https://discord.gg/FUkTHjGKJF" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord text-xl"></i></a></li>
-          <li><a href="https://twitter.com/BanchanArt" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter text-xl"></i></a></li>
+          <li class="text-xl">
+            <label class="swap swap-rotate">
+              <input id="mode-toggle" type="checkbox" class="hidden" />
+              <i class="swap-on fas fa-moon"></i>
+              <i class="swap-off fas fa-sun"></i>
+            </label>
+          </li>
+          <li>
+            <a
+              href="https://discord.gg/FUkTHjGKJF"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-discord text-xl"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/BanchanArt"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-twitter text-xl"></i
+            ></a>
+          </li>
         </ul>
       </div>
     </div>
     <div id="above-fold" class="px-4">
       <div id="hero" class="min-h-screen hero">
         <div class="hero-content flex flex-col md:flex-row">
-          <div
-            class="gap-4 p-4"></div>
-            <div class="flex flex-col gap-4">
-              <div class="text-5xl font-bold">
-                Own Your Platform
+          <div class="flex flex-col gap-4 p-4 items-center max-w-3xl">
+            <div class="text-5xl font-bold">A Platform for Art Commissions</div>
+            <div class="text-2xl font-semibold">
+              <span class="text-primary font-bold">Owned by the Artists</span>
+            </div>
+            <div class="text-2xl font-semibold pt-4">
+              Banchan is a
+              <a
+                href="https://en.wikipedia.org/wiki/Platform_cooperative"
+                class="text-primary link font-bold"
+                >co-op</a
+              >: Artists and workers make the
+              <span class="text-primary font-bold">decisions</span> and split
+              the <span class="text-primary font-bold">profits</span>, not
+              executives and shareholders. One person, one vote. One
+              <span class="text-primary font-bold">community</span>.
+            </div>
+            <div
+              id="top-cta"
+              class="w-full flex flex-col gap-2 mx-auto p-4 rounded-lg items-end"
+            >
+              <div class="text-xl font-medium">
+                Join the <span class="text-primary font-bold">Revolution</span>!
               </div>
-              <div class="text-2xl font-semibold">
-                Banchan is owned by the artists and worker that work on it,
-                where profits go back to artists and workers&mdash;not to
-                executives and shareholders.
-              </div>
-              <div id="top-cta" class="max-w-lg flex flex-col justify-items-end gap-2">
-                <input
-                  type="text"
-                  class="input input-bordered"
-                  placeholder="E-mail"
-                />
-                <button type="button" class="btn btn-primary ml-auto px-6">
-                  Sign Up
-                </button>
-              </div>
+              <div>(or at least the Closed Beta)</div>
+              <input
+                type="text"
+                class="input input-bordered w-full md:w-80"
+                placeholder="E-mail"
+              />
+              <button type="button" class="btn btn-primary px-6 w-32 ml-auto">
+                Sign Up
+              </button>
+            </div>
+            <div id="scroll-down-please">
+              <i class="fas fa-chevron-down animate-bounce text-3xl"></i>
             </div>
           </div>
         </div>
