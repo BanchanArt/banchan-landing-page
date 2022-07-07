@@ -42,32 +42,36 @@
     <link rel="stylesheet" href="/assets/css/styles.css" />
   </head>
   <body class="flex flex-col bg-base-100">
-    <div id="above-fold" class="px-4 relative">
-      <div
-        id="header"
-        class="bg-banchan-green text-black flex flex-row p-2 px-4 w-full absolute top-0 left-0"
-      >
-        <div class="grow flex flex-row place-items-center gap-2">
-          <img src="/assets/images/favicon-32x32.png" class="w-8" />
-          <div class="font-semibold text-lg">Banchan Art</div>
-        </div>
-        <div class="font-semibold">Socials Go Here</div>
+    <div
+      id="header"
+      class="navbar"
+    >
+      <div class="flex-1 flex flex-row place-items-center gap-2">
+        <img src="/assets/images/favicon-32x32.png" class="rounded-full w-8" />
+        <div class="font-semibold text-lg">Banchan Art</div>
       </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li><a href="https://discord.gg/FUkTHjGKJF" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord text-xl"></i></a></li>
+          <li><a href="https://twitter.com/BanchanArt" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter text-xl"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="above-fold" class="px-4">
       <div id="hero" class="min-h-screen hero">
         <div class="hero-content flex flex-col md:flex-row">
           <div
-            class="gap-4 p-4 text-center z-0 flex items-center justify-center"
-          >
+            class="gap-4 p-4"></div>
             <div class="flex flex-col gap-4">
               <div class="text-5xl font-bold">
-                The Co-operative Commissions Platform
+                Own Your Platform
               </div>
               <div class="text-2xl font-semibold">
-                Banchan is an artist and worker-owned platform, where each
-                member gets a vote and profits go back to artists and
-                workers&mdash;not to executives and shareholders.
+                Banchan is owned by the artists and worker that work on it,
+                where profits go back to artists and workers&mdash;not to
+                executives and shareholders.
               </div>
-              <div id="top-cta" class="flex flex-col justify-items-end gap-2">
+              <div id="top-cta" class="max-w-lg flex flex-col justify-items-end gap-2">
                 <input
                   type="text"
                   class="input input-bordered"
