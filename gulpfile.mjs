@@ -46,6 +46,7 @@ function browsersyncReload(cb) {
 function watchTask() {
     watch("./**/*.html", browsersyncReload);
     watch(["./**/*.html", "./src/*.css"], series(cssTask, browsersyncReload));
+    watch(["./assets/images/*"], series(imageminTask, browsersyncReload));
 }
 
 // Default Gulp Task
