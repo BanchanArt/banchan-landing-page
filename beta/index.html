@@ -8,10 +8,7 @@
     />
     <title>Banchan Art | The Co-operative Commissions Platform</title>
     <meta property="og:site_name" content="Banchan Art" />
-    <meta
-      property="og:title"
-      content="Banchan Art"
-    />
+    <meta property="og:title" content="Banchan Art" />
     <meta
       property="og:description"
       content="The Co-operative Commissions Platform"
@@ -20,8 +17,14 @@
       property="twitter:description"
       content="The Co-operative Commissions Platform"
     />
-    <meta property="og:image" content="https://banchan.art/assets/images/card.png" />
-    <meta name="twitter:image:src" content="https://banchan.art/assets/images/card.png" />
+    <meta
+      property="og:image"
+      content="https://banchan.art/assets/images/card.png"
+    />
+    <meta
+      name="twitter:image:src"
+      content="https://banchan.art/assets/images/card.png"
+    />
     <meta name="twitter:image:width" content="640" />
     <meta name="twitter:image:height" content="360" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -45,8 +48,18 @@
     />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#da532c" />
-    <script defer data-domain="banchan.art" src="https://plausible.io/js/plausible.outbound-links.js"></script>
-    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script
+      defer
+      data-domain="banchan.art"
+      src="https://plausible.io/js/plausible.outbound-links.js"
+    ></script>
+    <script>
+      window.plausible =
+        window.plausible ||
+        function () {
+          (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
+    </script>
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <script>
       function updateThemedElements(newTheme) {
@@ -80,7 +93,7 @@
         });
 
         function addRegisterFormListener(goal, registerForm) {
-          registerForm.addEventListener('submit', function(e) {
+          registerForm.addEventListener("submit", function (e) {
             e.preventDefault();
             setTimeout(submitForm, 1000);
             var formSubmitted = false;
@@ -92,12 +105,18 @@
               }
             }
 
-            plausible(goal, {callback: submitForm});
-          })
+            plausible(goal, { callback: submitForm });
+          });
         }
 
-        addRegisterFormListener("SignupTop", document.querySelector("#top-cta form"))
-        addRegisterFormListener("SignupBottom", document.querySelector("#bottom-cta form"))
+        addRegisterFormListener(
+          "SignupTop",
+          document.querySelector("#top-cta form")
+        );
+        addRegisterFormListener(
+          "SignupBottom",
+          document.querySelector("#bottom-cta form")
+        );
       });
     </script>
   </head>
@@ -182,6 +201,7 @@
               <form
                 name="contact"
                 method="POST"
+                action="/beta/success"
                 netlify
                 class="flex flex-row gap-2 w-full max-w-lg"
               >
@@ -303,6 +323,7 @@
             <form
               name="contact"
               method="POST"
+              action="/beta/success"
               netlify
               class="w-full max-w-xl flex flex-row gap-2 py-4"
             >
@@ -322,8 +343,8 @@
               target="_blank"
               rel="noopener noreferrer"
               class="btn bg-[#5865F2] btn-lg rounded-full"
-              >Join Us On Discord</a
-            >
+              >Join Us On Discord <i class="pl-2 fab fa-discord text-xl"></i
+            ></a>
           </div>
         </div>
       </div>
