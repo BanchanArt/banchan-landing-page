@@ -46,6 +46,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <script defer data-domain="banchan.art" src="https://plausible.io/js/plausible.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <script>
       function updateThemedElements(newTheme) {
@@ -77,6 +78,26 @@
           document.documentElement.setAttribute("data-theme", newTheme);
           updateThemedElements(newTheme);
         });
+
+        function addRegisterFormListener(goal, registerForm) {
+          registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            setTimeout(submitForm, 1000);
+            var formSubmitted = false;
+
+            function submitForm() {
+              if (!formSubmitted) {
+                formSubmitted = true;
+                registerForm.submit();
+              }
+            }
+
+            plausible('Signup', {callback: submitForm});
+          })
+        }
+
+        addRegisterFormListener("SignupTop", document.querySelector("#top-cta form"))
+        addRegisterFormListener("SignupBottom", document.querySelector("#bottom-cta form"))
       });
     </script>
   </head>
