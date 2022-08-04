@@ -88,9 +88,9 @@
     </script>
   </head>
   <body class="flex flex-col bg-base-100 relative">
-    <div
+    <nav
       id="header"
-      class="navbar bg-base-100 opacity-100 top-0 left-0 w-full sticky z-10"
+      class="navbar bg-base-100 opacity-100 top-0 left-0 w-full absolute z-10"
     >
       <a href="/" class="flex-1 flex flex-row place-items-center gap-2">
         <img src="/assets/images/favicon-32x32.png" class="rounded-full w-8" />
@@ -128,7 +128,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
     <div id="above-fold" class="md:px-4">
       <div id="hero" class="min-h-screen hero">
         <div class="hero-content flex flex-col md:flex-row">
@@ -140,5 +140,14 @@
         </div>
       </div>
     </div>
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+      <div class="flex flex-row">
+        <a href="/privacy-policy" class="link">Privacy Policy</a>
+        <a href="mailto:support@banchan.art" class="link">Contact Us</a>
+      </div>
+      <div>
+        <p>Copyright © 2022 - All right reserved by Digital Workers Guild LLC</p>
+      </div>
+    </footer>
   </body>
 </html>
