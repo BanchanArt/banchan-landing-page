@@ -208,7 +208,7 @@
                     placeholder="E-mail"
                   />
                   <button type="submit" class="btn btn-primary rounded-lg">
-                    Notify Me
+                    Sign Up
                   </button>
                 </div>
               </form>
@@ -329,9 +329,11 @@
     </div>
     <div id="bottom-cta" class="px-2 md:px-4">
       <div class="hero py-8">
-        <div class="hero-content flex flex-col md:flex-row">
+        <div class="hero-content flex flex-col items-center gap-10">
           <div class="card shadow-2xl bg-base-200">
-            <div class="card-body flex flex-col gap-4 p-4 items-center max-w-4xl">
+            <div
+              class="card-body flex flex-col gap-4 p-4 items-center max-w-4xl"
+            >
               <div class="text-5xl font-bold">
                 Sign Up for Updates and
                 <span class="text-primary">Beta Access</span>
@@ -345,39 +347,50 @@
               >
                 <div class="input-group">
                   <input
+                    id="bottom-cta-input"
                     name="email"
                     type="text"
                     class="input input-bordered grow rounded-lg"
                     placeholder="E-mail"
                   />
                   <button type="submit" class="btn btn-primary rounded-lg">
-                    Notify Me
+                    Sign Up
                   </button>
                 </div>
+                <label for="bottom-cta-input" class="label">
+                  <span class="label-text"
+                    >Beta access invites are
+                    <span class="text-primary"
+                      >first-come, first-serve</span
+                    ></span
+                  >
+                </label>
               </form>
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <a
+              href="https://discord.gg/FUkTHjGKJF"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn bg-[#5865F2] btn-md rounded-full"
+              >Join Us On Discord <i class="pl-2 fab fa-discord text-xl"></i
+            ></a>
+            <div class="flex flex-row">
               <a
-                href="https://discord.gg/FUkTHjGKJF"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn bg-[#5865F2] btn-md rounded-full"
-                >Join Us On Discord <i class="pl-2 fab fa-discord text-xl"></i
-              ></a>
-              <div class="flex flex-row">
-                <a
-                  href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-                  class="twitter-share-button link"
-                  data-text="Sign up for beta access to Banchan Art, a co-operative platform for art commissions, owned by artists!"
-                  data-via="BanchanArt"
-                  data-hashtags="#commsopen"
-                  data-show-count="false"
-                  >Tweet</a
-                >
-                <script
-                  async
-                  src="https://platform.twitter.com/widgets.js"
-                  charset="utf-8"
-                ></script>
-              </div>
+                href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                class="twitter-share-button link"
+                data-text="Sign up for beta access to Banchan Art, a co-operative platform for art commissions, owned by artists!"
+                data-via="BanchanArt"
+                data-hashtags="#commsopen"
+                data-show-count="false"
+                >Tweet</a
+              >
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"
+              ></script>
             </div>
           </div>
         </div>
