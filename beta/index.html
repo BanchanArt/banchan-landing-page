@@ -198,20 +198,19 @@
                 method="POST"
                 action="/beta/success"
                 netlify
-                class="flex flex-row gap-2 w-full max-w-lg"
+                class="w-full max-w-xl py-4 form-control"
               >
-                <input
-                  name="email"
-                  type="text"
-                  class="input input-bordered flex-1"
-                  placeholder="E-mail"
-                />
-                <button
-                  type="submit"
-                  class="btn btn-primary px-6 ml-auto rounded-lg"
-                >
-                  Sign Up
-                </button>
+                <div class="input-group">
+                  <input
+                    name="email"
+                    type="text"
+                    class="input input-bordered grow rounded-lg"
+                    placeholder="E-mail"
+                  />
+                  <button type="submit" class="btn btn-primary rounded-lg">
+                    Notify Me
+                  </button>
+                </div>
               </form>
             </div>
             <div id="scroll-down-please">
@@ -323,17 +322,19 @@
               method="POST"
               action="/beta/success"
               netlify
-              class="w-full max-w-xl flex flex-row gap-2 py-4"
+              class="w-full max-w-xl py-4 form-control"
             >
-              <input
-                name="email"
-                type="text"
-                class="input input-bordered grow rounded-lg"
-                placeholder="E-mail"
-              />
-              <button type="submit" class="btn btn-primary rounded-lg">
-                Sign Up
-              </button>
+              <div class="input-group">
+                <input
+                  name="email"
+                  type="text"
+                  class="input input-bordered grow rounded-lg"
+                  placeholder="E-mail"
+                />
+                <button type="submit" class="btn btn-primary rounded-lg">
+                  Notify Me
+                </button>
+              </div>
             </form>
             <a
               href="https://discord.gg/FUkTHjGKJF"
